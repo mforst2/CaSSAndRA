@@ -218,12 +218,16 @@ class Perimeter:
         else:
             logger.info('No search wire found.')
         self.astar_graph = G
-    
+
+    @staticmethod
+    def calculate_crc(dataForCrc: pd.DataFrame) -> int:
+        mapCRCx = dataForCrc['X'].round(2) * 100
+        mapCRCy = dataForCrc['Y'].round(2) * 100
+        return int(mapCRCx.astype(int).sum() + mapCRCy.astype(int).sum())
+
     def create_map_crc(self) -> None:
         dataForCrc = current_map.perimeter[current_map.perimeter['type'] != 'search wire']
-        mapCRCx = dataForCrc['X']*100 
-        mapCRCy = dataForCrc['Y']*100
-        self.map_crc = int(mapCRCx.sum() + mapCRCy.sum())
+        self.map_crc = Perimeter.calculate_crc(dataForCrc)
     
     def check_direct_way(self, start, end) -> bool:
         way = LineString([start, end])
