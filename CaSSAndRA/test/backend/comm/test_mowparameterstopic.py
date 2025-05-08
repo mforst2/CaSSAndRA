@@ -4,7 +4,7 @@ import pytest
 import json
 from unittest.mock import patch
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../..')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__).replace('\\', '/'), '../../..')))
 
 from src.backend.comm.apitopics.mowparameterstopic import MowParametersTopic
 

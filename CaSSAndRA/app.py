@@ -141,7 +141,7 @@ def start(host, port, proxy, data_path, debug, app_log_level, app_log_file_level
         #backendserver.start(file_paths)
 
 
-        assets_path = os.path.abspath(os.path.dirname(__file__)) +'/src/assets'
+        assets_path = os.path.abspath(os.path.dirname(__file__).replace('\\', '/')) +'/src/assets'
         app = dash.Dash(
             __name__,
             use_pages=True,    # turn on Dash pages

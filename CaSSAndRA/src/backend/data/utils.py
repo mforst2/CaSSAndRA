@@ -43,7 +43,7 @@ def init_data(data_path):
     # if not os.path.exists(data_path):
     #     os.makedirs(data_path)
 
-    file_paths.src = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+    file_paths.src = os.path.dirname(os.path.dirname(os.path.dirname(__file__).replace('\\', '/')))
     file_paths.data = data_path
 
     # user config files

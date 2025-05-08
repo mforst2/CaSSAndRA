@@ -5,7 +5,7 @@ import dash_bootstrap_components as dbc
 import pandas as pd
 
 # local imports
-from .. components import ids
+from src.components import ids
 from src.components.log import cmdinput
 from src.backend.data.logdata import commlog
 

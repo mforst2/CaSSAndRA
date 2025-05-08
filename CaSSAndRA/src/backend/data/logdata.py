@@ -10,7 +10,7 @@ import os
 # local imports
 from src.pathdata import paths
 
-ABSOLUTE_PATH = os.path.dirname(__file__)
+ABSOLUTE_PATH = os.path.dirname(__file__).replace('\\', '/')
 
 @dataclass
 class Log():

@@ -59,7 +59,7 @@ class Mower:
     seconds_per_idx: float = None
     #frontend
     rover_image: Image = field(default_factory = lambda: 
-                               Image.open(os.path.dirname(__file__).replace('/backend/data', '/assets/icons/'+appcfg.rover_picture+'rover0grad.png')))
+                               Image.open(os.path.dirname(__file__).replace('\\', '/').replace('/backend/data', '/assets/icons/'+appcfg.rover_picture+'rover0grad.png')))
     solution: str = 'invalid'
     status: str = 'offline'
     status_tmp: str = 'offline'

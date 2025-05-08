@@ -39,7 +39,7 @@ class Perimeter:
     obstacles: pd.DataFrame = field(default_factory=lambda: pd.DataFrame())
     obstaclesId: str = None
     obstacle_img: Image = field(default_factory = lambda: 
-                                Image.open(os.path.dirname(__file__).replace('/backend/data', '/assets/icons/obstacle.png')))
+                                Image.open(os.path.dirname(__file__).replace('\\', '/').replace('/backend/data', '/assets/icons/obstacle.png')))
     astar_graph: nx.Graph = nx.Graph()
     areatomow: int = 0
     distancetogo: int = 0

@@ -151,7 +151,7 @@ class AppCfg:
             self.voltage_100 = appcfg_from_file['voltage_to_soc'][1]['V']
             self.current_thd_charge = appcfg_from_file['current_thd_charge']
             self.rover_picture = appcfg_from_file['rover_picture']
-            self.rover_pictures = Image.open(os.path.dirname(__file__).replace('/backend/data', '/assets/icons/'+self.rover_picture)+'rover0grad.png')
+            self.rover_pictures = Image.open(os.path.dirname(__file__).replace('\\', '/').replace('/backend/data', '/assets/icons/'+self.rover_picture)+'rover0grad.png')
             self.obstacles_amount = appcfg_from_file['obstacles_amount']
             self.light_mode = appcfg_from_file['light_mode']
             self.rover_picture_size = appcfg_from_file['rover_picture_size']
@@ -183,7 +183,7 @@ class AppCfg:
             return -1
     
     def show_preview_image(self, path: str) -> str:
-        encoded_image = base64.b64encode(open(os.path.dirname(__file__).replace('/backend/data', '/assets/icons/'+path+'rover90grad.png'), 'rb').read())
+        encoded_image = base64.b64encode(open(os.path.dirname(__file__).replace('\\', '/').replace('/backend/data', '/assets/icons/'+path+'rover90grad.png'), 'rb').read())
         return 'data:image/png;base64,{}'.format(encoded_image.decode()) 
 
 #rovercfg class
