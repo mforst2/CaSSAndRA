@@ -66,7 +66,11 @@ accordion_settings = dbc.Accordion([
                                 dbc.Row([
                                 dbc.Col(html.Div(buttons.savebuttonmapsettings), width="auto"),
                                 dbc.Col([
-                                    dbc.FormText('Use cpp planner', className="text-center w-100"),
+                                    #dbc.FormText('Use cpp planner', className="text-center w-100"),
+                                    html.P(
+                                        'Use cpp planner', 
+                                        className="text-center mb-3 w-100" # mb-2 sorgt für Abstand nach unten
+                                    ),
                                     html.Div(
                                         dbc.Switch(
                                             id=ids.USECPPPLANNER,

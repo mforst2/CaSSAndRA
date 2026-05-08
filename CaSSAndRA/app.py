@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-#Version:0.302.0 Fix issue in random angle calculation for CPP planner
+#Version:0.302.1 Fix issue with flex use cpp switch
 # package imports
 import os
 import sys
